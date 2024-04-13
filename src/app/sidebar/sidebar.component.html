@@ -1,0 +1,24 @@
+<!-- Sidenav -->
+<div class="sidenav">
+    <div class="profile">
+        <img [src]="api.userData.avatar_url" alt="" width="100" height="100">
+        <div class="name">
+            {{api.userData.login}}
+        </div>
+        <div class="job">
+            {{api.userData.type}}
+        </div>
+    </div>
+
+    <div class="sidenav-url" >
+        <div class="url">
+            <a  routerLink="/profile" class="active">Profile</a>
+            
+        <div class="url">
+            <a routerLink="/listing">View my Github Repositories</a>
+            
+
+
+        </div>
+    </div>
+</div>

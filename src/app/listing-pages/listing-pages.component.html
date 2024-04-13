@@ -1,0 +1,39 @@
+<app-sidebar></app-sidebar>
+<div class="container">
+     <!--Product Grid-->
+     <div id="div1">
+          <section class="section-grid">
+               <div  class="grid-prod">
+                    
+                    <div  class="prod-grid" *ngFor="let repo of repos | paginate: {itemsPerPage:6 ,currentPage :p} ">
+                         <h3 #name>  {{repo.name}}</h3>
+                          <div class="accordion" id="accordionPanelsStayOpenExample">
+                              <div  class="accordion-item">
+                                <h2   class="accordion-header" id="panelsStayOpen-headingOne">
+                                  <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseOne" aria-expanded="true" aria-controls="panelsStayOpen-collapseOne">
+                                    View Description
+                                  </button>
+                                </h2>
+                                <div id="panelsStayOpen-collapseOne" class="accordion-collapse collapse show" aria-labelledby="panelsStayOpen-headingOne">
+                                  <div class="accordion-body">
+                                   <p *ngIf="repo.description==null">Description of github repo goes here... </p>
+                                   <p *ngIf="repo.description!=null">{{repo.description}}</p>
+                                </div>
+                              </div>
+                              
+                         </div>
+                         <a class="github_icon" [href]="repo.html_url" target="_blank" ><i class="fa-brands fa-github"></i></a>
+                         </div>
+                         
+                         <button class="btn" *ngIf="repo.language!=null">{{repo.language}}</button>
+                        
+                     </div>
+                     
+               </div> 
+               
+          </section>
+        
+     </div>
+
+     <pagination-controls (pageChange)="p =$event"></pagination-controls>
+    

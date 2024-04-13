@@ -1,0 +1,78 @@
+<app-sidebar ></app-sidebar>
+<button  style='float:right ' type="button" class="btn btn-secondary" (click)="logoutUser()">LogOut</button>
+<!-- <button (click)="consoleData()">Console data from Profile</button> -->
+<!-- Main -->
+<div class="main">
+    <h2>GITHUB PROFILE</h2>
+    <div class="card">
+        <div class="card-body">
+            <table >
+                <tbody>
+                    <tr>
+                        <td>Name</td>
+                        <td>:</td>
+                        <td>{{api.userData.name}}</td>
+                    </tr>
+                    <tr>
+                        <td>Bio</td>
+                        <td>:</td>
+                        <td>{{api.userData.bio}}</td>
+                    </tr>
+                    <tr>
+                        <td>Email</td>
+                        <td>: </td>
+                        <td>{{api.userData.email}}</td>
+                    </tr>
+                    <tr>
+                        <td>Address</td>
+                        <td>:</td>
+                        <td>{{api.userData.location}}</td>
+                    </tr>
+                    <tr>
+                        <td>Company</td>
+                        <td>:</td>
+                        <td>{{api.userData.company}}</td>
+                    </tr>
+                    <tr>
+                        <td>Number of public repositories</td>
+                        <td>:</td>
+                        <td>{{api.userData.public_repos}}</td>
+                    </tr>
+                    <tr>
+                        <td>Followers:</td>
+                        <td>:</td>
+                        <td>{{api.userData.followers}}</td>
+                    </tr>
+                    <tr>
+                        <td>Following:</td>
+                        <td>:</td>
+                        <td>{{api.userData.following}}</td>
+                    </tr>
+
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <h2>SOCIAL MEDIA</h2>
+    <div class="card">
+        <div class="card-body">
+            <div class="social-media">
+               
+                <span class="fa-stack fa-sm">
+                    <a href="#" title="Twitter">
+                    <i class="fas fa-circle fa-stack-2x"></i>
+                    <i class="fab fa-twitter fa-stack-1x fa-inverse"></i></a>
+                    <p> {{api.userData.twitter_username}}</p>
+                </span>
+               
+              
+                <span class="fa-stack fa-sm">
+                     <a [href]="api.userData.html_url"  target="_blank" title="Follow the Link..."><i class="fas fa-circle fa-stack-2x"></i>
+                      <i class="fab fa-github fa-stack-1x fa-inverse"></i></a>
+                    <p> {{api.userData.html_url}}</p>
+                </span>
+            </div>
+        </div>
+    </div>
+</div>

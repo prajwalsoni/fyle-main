@@ -1,0 +1,54 @@
+<div class="container"  *ngIf= "showSearch">
+    <div class="search-box" [formGroup]='formValue' style="text-align: center;">
+       <input type="text"   formControlName='username' class="search-input" placeholder="Search with github username...">
+ 
+       <button class="search-button" (click)="loadingAPI()">
+         <i class="fas fa-search"></i>
+       </button>
+     </div>
+    <span style="color:burlywood; float:left;">Eg : mojombo, wycats etc.</span>
+    <span style="color:burlywood;">For more info refer <a  (click)="showListing()" style="color:blue; cursor:pointer">Check</a></span>
+
+   </div>
+
+
+<div  *ngIf= "showLoading" class="container">
+    <h4>Loading the API ...</h4>
+    <div class="wrapper">
+        <div class="loader">
+            <div class="spinner"></div>
+        </div>
+        <div class="loader">
+            <div class="spinner"></div>
+        </div>
+        <div class="loader">
+            <div class="spinner"></div>
+        </div>
+        <div class="loader">
+            <div class="spinner"></div>
+        </div>
+        <div class="loader">
+            <div class="spinner"></div>
+        </div>
+        <div class="loader">
+            <div class="spinner"></div>
+        </div>
+        <div class="loader">
+            <div class="spinner"></div>
+        </div>
+        <div class="loader">
+            <div class="spinner"></div>
+        </div>
+    </div>
+</div>
+
+<div *ngIf="showList">
+    <h5> List of Github Users to search:</h5>
+    <ul *ngFor="let user of userData">
+        <li>{{user.login}}</li>
+    </ul>
+</div>
+
+
+
+<router-outlet></router-outlet>
